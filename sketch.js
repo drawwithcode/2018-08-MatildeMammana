@@ -1,11 +1,23 @@
-function preload(){
-  // put preload code here
-}
+var value = 0;
 
 function setup() {
-  // put setup code here
+  createCanvas(windowWidth,windowHeight);
+  angleMode(DEGREES);
+  setShakeThreshold(10);
+  frameRate(12);
 }
 
 function draw() {
-  // put drawing code here
+  background('red');
+  fill(255-value);
+  textSize(90);
+  textAlign(CENTER);
+  text(value,width/2,height/2+30)
+}
+
+function deviceShaken() {
+  value = value + 1;
+  if (value > 255) {
+    value = 0;
+  }
 }
